@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-pagination-bullet {
+    @apply !w-4 !h-4 !bg-transparent ring-1 !ring-white !mx-2;
+}
+
+.swiper-pagination-bullet-active {
+    @apply !bg-white;
+}
