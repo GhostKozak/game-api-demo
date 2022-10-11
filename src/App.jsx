@@ -8,6 +8,7 @@ import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import GameList from "./pages/GameList";
 import Header from "./components/Header";
+import GameDetail from "./pages/GameDetail";
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/gamelist" element={<GameList />} />
         <Route path="/about" element={<About />} />
+        <Route path="/games/:id" element={<GameDetail />}></Route>
+        <Route path="/games/:slug" element={<GameDetail />}></Route>
       </Routes>
       <section className="bg-black text-white py-4">
         <div className="container mx-auto flex justify-between gap-2">

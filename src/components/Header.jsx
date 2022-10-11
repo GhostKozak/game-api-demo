@@ -3,7 +3,7 @@ import NavSocial from "./NavSocial";
 
 const Header = ({ y }) => {
   return (
-    <header className={`fixed top-0 w-full z-30 transition-all ${y < -90 ? "shadow-lg backdrop-blur-md" : ""}`}> {/* shadow-lg backdrop-blur-md */}
+    <header className={`fixed top-0 w-full z-30 transition-all ${y < -90 ? "shadow-lg backdrop-blur-3xl" : ""}`}> {/* shadow-lg backdrop-blur-md */}
       <div className="container mx-auto flex p-4 h-32">
         <div className="brand font-black flex items-center text-white">GhostKozak w/ <span className="text-amber-400 pl-1"> Eyupcanee</span></div>
         <div className="flex items-center px-5 ml-auto">
