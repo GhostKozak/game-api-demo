@@ -1,4 +1,5 @@
 {
+    "editor.formatOnSave": false,
     "editor.detectIndentation": false,
     "[javascript]": {
         "editor.insertSpaces": true,

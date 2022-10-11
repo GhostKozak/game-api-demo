@@ -1,6 +1,5 @@
 module.exports = {
-  "extends": [
-  ],
+  "extends": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
@@ -8,18 +7,10 @@ module.exports = {
       "jsx": true
     }
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "rules": {
-    "indent": [
-      "error",
-      2
-    ],
-    "quotes": [
-      "error",
-      "double"
-    ],
+    "indent": ["error", 2],
+    "quotes": ["error", "double"],
     "semi": ["error", "always", { "omitLastInOneLineBlock": true }],
     "react/no-arrow-function-lifecycle": "error",
     "react/no-direct-mutation-state": "error",

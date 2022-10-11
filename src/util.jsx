@@ -11,22 +11,22 @@ import { RiEarthLine } from "react-icons/ri";
 
 export const getPlatformImage = (platformID) => {
   switch (platformID) {
-    case 4: //PC
-      return <FiMonitor />;
-    case 187: //PS5
-      return <SiPlaystation />;
-    case 1: //Xbox One
-      return <SiXbox />;
-    case 18: //PS4
-      return <SiPlaystation />;
-    case 7: //Switch Nintendo
-      return <SiNintendoswitch />;
-    case 5: //MacOS
-      return <SiApple />;
-    case 6: //Linux
-      return <SiLinux />;
-    default:
-      return <RiEarthLine />;
+  case 4: //PC
+    return <FiMonitor />;
+  case 187: //PS5
+    return <SiPlaystation />;
+  case 1: //Xbox One
+    return <SiXbox />;
+  case 18: //PS4
+    return <SiPlaystation />;
+  case 7: //Switch Nintendo
+    return <SiNintendoswitch />;
+  case 5: //MacOS
+    return <SiApple />;
+  case 6: //Linux
+    return <SiLinux />;
+  default:
+    return <RiEarthLine />;
   }
 };
 
