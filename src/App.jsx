@@ -9,6 +9,7 @@ import About from "./pages/About";
 import GameList from "./pages/GameList";
 import Header from "./components/Header";
 import GameDetail from "./pages/GameDetail";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -31,24 +32,7 @@ function App() {
         <Route path="/games/:id" element={<GameDetail />}></Route>
         <Route path="/games/:slug" element={<GameDetail />}></Route>
       </Routes>
-      <section className="bg-black text-white py-4">
-        <div className="container mx-auto flex justify-between gap-2">
-          <span className="flex items-center">Copyright &copy; 2018 Eyupcanee w/ GhostKozak - All right reserved.</span>
-          <div className="flex gap-3">
-            {[
-              ["Home", "/"],
-              ["About", "/"],
-              ["Blog", "/"],
-              ["Games", "/"],
-              ["Community", "/"],
-              ["Pages", "/"],
-              ["Contact", "/"]
-            ].map(([title, url]) => (
-              <a key={title} href={url} className="py-3 transition-colors text-inherit hover:text-amber-400" >{title}</a>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Footer />
     </>
   );
 }

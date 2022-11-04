@@ -1,11 +1,13 @@
+import { useLocation } from "react-router-dom";
 import Nav from "./Nav";
 import NavSocial from "./NavSocial";
 
 const Header = ({ y }) => {
+  const {pathname} = useLocation();
   return (
-    <header className={`fixed top-0 w-full z-30 transition-all ${y < -90 ? "shadow-lg backdrop-blur-3xl" : ""}`}> {/* shadow-lg backdrop-blur-md */}
+    <header className={`fixed top-0 w-full z-30 transition-all ${(y < -90 || pathname !== "/") ? "bg-amber-400" : ""}`}> {/* shadow-lg backdrop-blur-md */}
       <div className="container mx-auto flex p-4 h-32">
-        <div className="brand font-black flex items-center text-white">GhostKozak w/ <span className="text-amber-400 pl-1"> Eyupcanee</span></div>
+        <div className="brand font-black flex items-center text-white">GhostKozak w/ <span className={` pl-1 ${(y < -90 || pathname !== "/") ? "text-purple-900" : "text-amber-400"}`}> Eyupcanee</span></div>
         <div className="flex items-center px-5 ml-auto">
           <button type="submit" className="flex flex-col justify-center overflow-auto h-6 group">
             <span className="

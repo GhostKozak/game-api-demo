@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../components/Hero";
 import ReleaseGame from "../components/ReleaseGame";
 import SocialBanner from "../components/SocialBanner";
+import Loading from "../components/Loading.jsx";
+import ProgressRing from "../components/ProgressRing";
 
 const MainPage = () => {
   return (
@@ -24,6 +26,8 @@ const MainPage = () => {
           ))}
         </div>
       </section>
+      <Loading />
+      <ProgressRing percent={70} />
       <ReleaseGame />
       <SocialBanner />
     </div>

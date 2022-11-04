@@ -19,7 +19,7 @@ export const getGames = () => {
 
 export const getGameByIdOrSlug = (idOrSlug) => {
   const [game, setGame] = useState(null);
-  useEffect(() => {
+useEffect(() => {
     axios.get(`${import.meta.env.VITE_BASE_URL}games/${idOrSlug}${import.meta.env.VITE_API_KEY}`)
       .then((response) => {
         setGame(response.data);

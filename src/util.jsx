@@ -1,4 +1,5 @@
 import { FiMonitor } from "react-icons/fi";
+import { AiFillWindows } from "react-icons/ai";
 import {
   SiPlaystation4,
   SiPlaystation,
@@ -25,6 +26,19 @@ export const getPlatformImage = (platformID) => {
       return <SiApple />;
     case 6: //Linux
       return <SiLinux />;
+    default:
+      return <RiEarthLine />;
+  }
+};
+
+export const getPlatformImageFromText = (text) => {
+  switch (text) {
+    case 'PC': //PC
+      return <AiFillWindows />;
+    case 'PlayStation': //PS5
+      return <SiPlaystation />;
+    case 'Xbox': //Xbox One
+      return <SiXbox />;
     default:
       return <RiEarthLine />;
   }

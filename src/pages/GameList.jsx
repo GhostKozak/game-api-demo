@@ -15,7 +15,7 @@ const GameList = () => {
 
   //Functions 
   return (
-    <div className='p-5'>
+    <div className='p-5 mt-32'>
       <h1 className='mb-4'>Game List</h1>
 
       <div className='container mx-auto grid grid-cols-4 gap-4'>
