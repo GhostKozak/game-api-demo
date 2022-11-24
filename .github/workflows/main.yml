@@ -6,9 +6,14 @@ on:
     branches: ["main"]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: Build & Deploy React app to GitHub Pages
-        uses: MrKrishnaAgarwal/deploy-react-app-to-gh-pages@v1.0.0
+          - run : yarn
+          - run : yarn build
+          - run : git config user.name github-actions
+          - run : git config user.email github-actions@github.com
+          - run : git --work-tree build add --all
+          - run : git commit -m "Automatic Build and Deploy run by GitHub Actions"
+          - run : git push origin HEAD:gh-pages --force
