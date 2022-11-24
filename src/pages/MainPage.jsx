@@ -26,8 +26,6 @@ const MainPage = () => {
           ))}
         </div>
       </section>
-      <Loading />
-      <ProgressRing percent={70} />
       <ReleaseGame />
       <SocialBanner />
     </div>

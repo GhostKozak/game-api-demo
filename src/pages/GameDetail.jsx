@@ -28,17 +28,17 @@ const GameDetail = () => {
 
   if (gameDetail) {
     return (
-      <section>
-        <div className="relative">
-          <img src={gameDetail.background_image} alt="" />
+      <section className="bg-black text-white">
+        <div className="relative overflow-hidden max-h-[70vh] before:absolute before:w-full before:h-5/6 before:left-0 before:bottom-0 before:bg-gradient-to-b before:from-transparent before:to-black z-0">
+          <img src={gameDetail.background_image} alt="" className="w-full h-auto object-cover" />
           <div className="absolute top-40 right-9 text-white">
             <ProgressRing percent={gameDetail.metacritic} />
           </div>
         </div>
 
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto py-6 relative z-10 -mt-80">
           <div className="flex gap-2">
-            <span className="bg-slate-600 px-2 rounded text-white font-light">{gameDetail.released}</span>
+            <span className="bg-slate-800 px-2 rounded text-white font-light">{gameDetail.released}</span>
             {
               gameDetail.parent_platforms.map(item => (
                 <span key={item.platform.id} className="flex justify-center items-center" >{getPlatformImageFromText(item.platform.name)}</span>
@@ -46,16 +46,17 @@ const GameDetail = () => {
             }
             <span>Avarage Playtime: {gameDetail.playtime} Hours</span>
           </div>
-          <div className="flex text-gray-700 relative group mb-6">
+          <div className="flex relative group mb-6">
             <h1 className="text-6xl font-bold leading-none">{gameDetail.name}</h1>
             <a href={gameDetail.website} className="ml-5 absolute top-0 -left-16 text-2xl align-text-top p-3 opacity-0 group-hover:opacity-100 transition-opacity" ><FaExternalLinkAlt /></a>
           </div>
           <div className="grid gap-3" dangerouslySetInnerHTML={{__html: gameDetail.description}} ></div>
           <div className="grid grid-cols-3 gap-2 my-9">
             {
-              gameScreenshots.map(image => (
-                <img src={image.image} />
-              ))
+              gameScreenshots &&
+                gameScreenshots.map(image => (
+                  <img src={image.image} />
+                ))
             }
           </div>
         </div>

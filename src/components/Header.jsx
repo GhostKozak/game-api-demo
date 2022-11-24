@@ -5,7 +5,7 @@ import NavSocial from "./NavSocial";
 const Header = ({ y }) => {
   const {pathname} = useLocation();
   return (
-    <header className={`fixed top-0 w-full z-30 transition-all ${(y < -90 || pathname !== "/") ? "bg-amber-400" : ""}`}> {/* shadow-lg backdrop-blur-md */}
+    <header className={`fixed top-0 w-full z-30 transition-all ${(y < -90 || pathname !== "/") ? "bg-amber-400/70 backdrop-blur-md" : ""}`}> {/* shadow-lg backdrop-blur-md */}
       <div className="container mx-auto flex p-4 h-32">
         <div className="brand font-black flex items-center text-white">GhostKozak w/ <span className={` pl-1 ${(y < -90 || pathname !== "/") ? "text-purple-900" : "text-amber-400"}`}> Eyupcanee</span></div>
         <div className="flex items-center px-5 ml-auto">
