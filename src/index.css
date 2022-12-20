@@ -9,3 +9,11 @@
 .swiper-pagination-bullet-active {
     @apply !bg-white;
 }
+
+html, body {
+    @apply h-full scroll-smooth;
+}
+
+* {
+    @apply box-border;
+}

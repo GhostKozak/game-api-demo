@@ -3,21 +3,21 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading.jsx";
 import ProgressRing from "../components/ProgressRing";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { getPlatformImageFromText } from "../util.jsx";
+import { colorizeMetaCritic, getPlatformImageFromText } from "../util.jsx";
 
 const GameDetail = () => {
   const [gameDetail, setGameDetail] = useState(null);
   const [gameScreenshots, setGameScreenshots] = useState(null);
   const { id } = useParams();
-
+  
   useEffect(() => {
     const fetchData = async (_id) => {
-      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}?key=498b3a2f06b2424e90f97a1c191051f7`);
+      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}?key=${import.meta.env.VITE_RAWG_IO_API_KEY}`);
       const jsonResponse = await initialData.json();
       setGameDetail(jsonResponse);
     };
     const fetchScreenshots = async (_id) => {
-      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}/screenshots?key=498b3a2f06b2424e90f97a1c191051f7`);
+      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}/screenshots?key=${import.meta.env.VITE_RAWG_IO_API_KEY}`);
       const jsonResponse = await initialData.json();
       setGameScreenshots(jsonResponse.results);
     };
@@ -32,7 +32,7 @@ const GameDetail = () => {
         <div className="relative overflow-hidden max-h-[70vh] before:absolute before:w-full before:h-5/6 before:left-0 before:bottom-0 before:bg-gradient-to-b before:from-transparent before:to-black z-0">
           <img src={gameDetail.background_image} alt="" className="w-full h-auto object-cover" />
           <div className="absolute top-40 right-9 text-white">
-            <ProgressRing percent={gameDetail.metacritic} />
+          <div className={`p-15 absolute right-3 top-3 z-20 border rounded flex justify-center items-center backdrop-blur-md backdrop-brightness-75 w-16 h-16 group-hover:-right-full text-3xl ${colorizeMetaCritic(gameDetail.metacritic)}`} >{gameDetail.metacritic}</div>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ const GameDetail = () => {
             {
               gameScreenshots &&
                 gameScreenshots.map(image => (
-                  <img src={image.image} />
+                  <img src={image.image} key={image.id} />
                 ))
             }
           </div>

@@ -48,11 +48,11 @@ export const getPlatformImageFromText = (text) => {
 export const colorizeMetaCritic = (metaNote) => {
   if (metaNote === null) {
     return "text-white";
-  } else if (metaNote < 25) {
-    return "text-red-700";
   } else if (metaNote < 50) {
-    return "text-yellow-400";
+    return "text-red-700 border-red-700";
+  } else if (metaNote < 75) {
+    return "text-yellow-400 border-yellow-400";
   } else if (metaNote <= 100) {
-    return "text-lime-500";
+    return "text-lime-500 border-lime-500";
   }
 };

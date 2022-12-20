@@ -8,11 +8,11 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
-import { getPlatformImageFromText } from "../util";
 
 const Hero = () => {
   const [gamesData, setGamesData] = useState([]);
   const featuredGamesId = [
+    "elden-ring",
     "god-of-war-ragnarok",
     "call-of-duty-modern-warfare-ii",
     "stalker-2",
@@ -21,7 +21,7 @@ const Hero = () => {
 
   useEffect(() => {
     const fetchData = async (_id) => {
-      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}?key=498b3a2f06b2424e90f97a1c191051f7`);
+      const initialData = await fetch(`https://api.rawg.io/api/games/${_id}?key=${import.meta.env.VITE_RAWG_IO_API_KEY}`);
       const jsonResponse = await initialData.json();
       //setGameDetail(jsonResponse);
       //console.log("jsonResponse : ", jsonResponse)
@@ -67,7 +67,7 @@ const Hero = () => {
                 </div>
                 <h1 className="text-6xl font-black uppercase text-center mb-8">{game.name}</h1>
                 <p className="max-w-4xl text-center mb-11 line-clamp-3" >{game.description.replace(/(<([^>]+)>)/ig, '')}</p> {/* dangerouslySetInnerHTML={{__html: game.description}} */}
-                <Link to={"/games/" + game.id} className="inline-block py-3 px-5 text-white hover:text-amber-400 font-bold uppercase relative transition-all after:transition-all after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:-z-10 after:bg-white hover:after:bg-amber-400 ">game details</Link>
+                <Link to={"/games/" + game.slug} className="inline-block py-3 px-5 text-white hover:text-amber-400 font-bold uppercase relative transition-all after:transition-all after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:-z-10 after:bg-white hover:after:bg-amber-400 ">game details</Link>
               </div>
             </SwiperSlide>
           )) : null
