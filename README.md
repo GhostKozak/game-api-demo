@@ -1,6 +1,6 @@
 # Game Site Project
 
-Lorem ipsum dolar amet sit Lorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sitLorem ipsum dolar amet sit
+React Project using Rawg.io API 
 
 > Create a `.env` file and enter your `rawg.io` api key
 >
